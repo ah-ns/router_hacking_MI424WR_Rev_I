@@ -14,6 +14,8 @@ I knew to look for the UART debugger first because I learned that it is often th
 
 ![UART header pins peeking through the gap](./images/router_shell.jpg)
 
-This was confirmed when I opened up to see the PCB. On the top left of the board, the full 6 pin header can be seen.
+This was confirmed when I opened up to see the PCB. There is a bunch of cool stuff here like transistors, inductors (those green circles with wire wrapped around them), and integrated circuits like an ethernet controller. The thing we are looking for is on the top left of the board - a header with 6 pins.
 
 ![Front of the PCB](./images/pcb_front.jpg)
+
+As you may know, there are only 3 pins required for a UART connection, but there are 6 here. There are no markings for the pins on this PCB, meaning the next step is figuring out if these pins are even for UART, and if they are, which 3 pins we need. This is possible by measuring voltage through the pins when the router is running. This can be done using a multimeter.
