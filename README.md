@@ -18,4 +18,6 @@ This was confirmed when I opened up to see the PCB. There is a bunch of cool stu
 
 ![Front of the PCB](./images/pcb_front.jpg)
 
-As you may know, there are only 3 pins required for a UART connection, but there are 6 here. There are no markings for the pins on this PCB, meaning the next step is figuring out if these pins are even for UART, and if they are, which 3 pins we need. This is possible by measuring voltage through the pins when the router is running. This can be done using a multimeter.
+As you may know, there are only 3 pins required for a UART connection, but there are 6 here (numbered 1 to 6 from right to left). There are no markings for the pins on this PCB, meaning the next step is figuring out if these pins are even for UART, and if they are, which 3 pins we need. This is possible by measuring voltage through the pins when the router is running. This can be done using a multimeter.
+
+Using an old analog multimeter, I got readings of 0, 2.9, 2.1, 0, 2.9, 0 volts on the pins, and I figured that the 2.9s were really 3.3V, the 2.1 was the TX(because it is probably "floating"), and the middle 0 was the RX (because nothing is being recieved). I looked up the pins on openwrt and it turns out the 2.1 is the RX and the 2.9 next to it is the TX. This confused me at first because a video I watched showed the RX was 0V and the TX was floating around 2V, but then I did some digging, and the voltage is not necessarily the same in all circuits.
